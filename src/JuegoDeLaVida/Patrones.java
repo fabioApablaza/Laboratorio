@@ -142,14 +142,16 @@ public class Patrones {
         unaMatriz[11][9].setEstadoActual(true);
         unaMatriz[12][9].setEstadoActual(true);
         unaMatriz[13][9].setEstadoActual(true);
+        unaMatriz[14][9].setEstadoActual(true);
         //celulas del medio
         unaMatriz[10][11].setEstadoActual(true);
-        unaMatriz[13][11].setEstadoActual(true);
+        unaMatriz[14][11].setEstadoActual(true);
         //Linea derecha
         unaMatriz[10][13].setEstadoActual(true);
         unaMatriz[11][13].setEstadoActual(true);
         unaMatriz[12][13].setEstadoActual(true);
         unaMatriz[13][13].setEstadoActual(true);
+        unaMatriz[14][13].setEstadoActual(true);
     }
 
     private static void tenCellRow(Celula[][] unaMatriz) {

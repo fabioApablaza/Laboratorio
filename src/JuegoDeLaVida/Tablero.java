@@ -16,7 +16,7 @@ public class Tablero {
     //
     private ExecutorService executor;
     //
-    private CyclicBarrier barrera;
+    private CyclicBarrier barrera, barreraEvolucion;
     //
     private LinkedList<Tarea> listaTareas;
     //Cantidad de tareas
@@ -27,6 +27,7 @@ public class Tablero {
         this.mundo = new Celula[Tamaño][Tamaño];
         this.listaTareas = new LinkedList<Tarea>();
         barrera = new CyclicBarrier(CANTTAREAS);
+        barreraEvolucion = new CyclicBarrier(CANTTAREAS);
         this.crearCelulas();
         this.vecinosCelulas();
         
@@ -129,7 +130,7 @@ public class Tablero {
         
         Patrones.seleccionDePatrones(mundo);//seleccion del patron o diseño de la matriz
         for (int i = 0; i < CANTTAREAS; i++) {
-            Tarea tarea = new Tarea(i, TAMAÑO, columnaInicial, columnaFinal, mundo, barrera);
+            Tarea tarea = new Tarea(i, TAMAÑO, columnaInicial, columnaFinal, mundo, barrera,barreraEvolucion);
             columnaInicial += cantCadaHilo;
             columnaFinal += cantCadaHilo;
             listaTareas.add(tarea);
